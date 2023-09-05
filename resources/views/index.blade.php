@@ -21,7 +21,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                @foreach ($data as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{url('edit/'.$item->id)}}">Edit</a>
+                            <a class="btn btn-danger" href="{{url('delete/'.$item->id)}}">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
+
+
+
+                {{-- <tr>
                     <td>1</td>
                     <td>Product 1</td>
                     <td>Description 1</td>
@@ -39,7 +54,7 @@
                     <td>
                         <a class="btn btn-primary" href="edit/id">Edit</a>
                         <a class="btn btn-danger" href="delete/id">Delete</a>
-                    </td>
+                    </td> --}}
                 </tr>
             </tbody>
         </table>

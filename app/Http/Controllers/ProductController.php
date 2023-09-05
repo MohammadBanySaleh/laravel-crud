@@ -14,9 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products =Product::list();
+        $data = Product::all(); // Replace with your model name and any query logic
 
-        return view('index', compact('products'));
+        return view('index', compact('data'));
     }
 
     /**
@@ -44,7 +44,7 @@ class ProductController extends Controller
         ]);
     
         Product::create($request->all());
-        return redirect()->route('products.index')->with('success', 'Product added');
+        return redirect()->route('index')->with('success', 'Product added');
     }
 
     /**
