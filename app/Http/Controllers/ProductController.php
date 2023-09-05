@@ -14,9 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products =Product::list();
+        $data = Product::all(); // Replace with your model name and any query logic
 
-        return view('index', compact('products'))
+        return view('index', ['data' => $data]);
     }
 
     /**

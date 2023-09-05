@@ -14,14 +14,16 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [ProductController::class, 'index']);
 
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
 Route::get('/create', function () {
     return view('create');
 })->name('products.create');
+
 Route::get('/index', function () {
     return view('index');
 })->name('products.index');
+
+Route::get('/table-data', 'TableController@index');
