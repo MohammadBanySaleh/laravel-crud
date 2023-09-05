@@ -16,6 +16,9 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [ProductController::class, 'index']);
 
+Route::get('edit/{id}', [ProductController::class, 'edit']);
+Route::put('update/{id}', [ProductController::class, 'update']);
+
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
 Route::get('/create', function () {
