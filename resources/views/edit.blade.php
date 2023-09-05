@@ -10,27 +10,30 @@
 
 <body>
     <div class="container p-4">
-        <form method="POST" action="{{ route('products.store') }}">
+        <form method="POST" action="{{ url('update/'.$product->id) }}">
             @csrf
+            @method('PUT');
             <div class="form-group">
-                <label for="product-name">Product name</label>
-                <input type="text" name="name" class="form-control" id="product-name" aria-describedby="nameHelp">
+              <label for="">Product name</label>
+              <input type="text" class="form-control" value="{{ $product->name }}" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <label for="product-description">Product description</label>
+            <label for="">Product desctiption</label>
             <div class="form-group">
-                <textarea name="description" id="product-description" cols="30" rows="10"></textarea>
+              <textarea name="pro_desc" id="" cols="30" rows="10">{{ $product->description }}</textarea>
             </div>
             <div class="form-group">
-                <label for="">Product price</label>
-                <input type="number" name="price" class="form-control" id="product-price" aria-describedby="nameHelp">
-            </div>
+                <label for="">Product Pice</label>
+                <input type="text" class="form-control" value="{{ $product->price }}" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          </form>
     </div>
+    
 
     <!-- Bootstrap 4 JavaScript and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js%22%3E"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js%22%3E"></script>
+    
 </body>
 
 </html>

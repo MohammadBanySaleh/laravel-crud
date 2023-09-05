@@ -14,9 +14,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products =Product::list();
+        $data = Product::all(); // Replace with your model name and any query logic
 
+<<<<<<< HEAD
         return view('index', compact('products'));
+=======
+        return view('index', compact('data'));
+>>>>>>> c5e581cbe96b50446efeea8e352b5195875ae517
     }
 
     /**
@@ -44,7 +48,7 @@ class ProductController extends Controller
         ]);
     
         Product::create($request->all());
-        return redirect()->route('products.index')->with('success', 'Product added');
+        return redirect()->route('index')->with('success', 'Product added');
     }
 
     /**
@@ -64,9 +68,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
+        $product=Product::find($id);
+        return view ('edit', compact('product'));
     }
 
     /**
@@ -76,9 +82,18 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request,$id)
     {
         //
+        $product=Product::find($id);
+        $product->name=$request->input('name');
+        $product->description=$request->input('description');
+        $product->price=$request->input('price');
+        $product->update();
+
+
+
+
     }
 
     /**
