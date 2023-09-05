@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -18,10 +17,9 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('index');
 });
-<<<<<<< HEAD
+
 Route::get('edit/{id}', [ProductController::class, 'edit']);
 Route::put('update/{id}', [ProductController::class, 'update']);
-=======
 
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/create', function () {
@@ -30,4 +28,3 @@ Route::get('/create', function () {
 Route::get('/index', function () {
     return view('index');
 })->name('products.index');
->>>>>>> f65e5be4320e94461070a9dd35936c59120690c3
