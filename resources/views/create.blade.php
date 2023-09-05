@@ -29,8 +29,8 @@
     </div>
 
     <!-- Bootstrap 4 JavaScript and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js%22%3E</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js%22%3E</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js%22%3E"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js%22%3E"></script>
 </body>
 
 </html>
