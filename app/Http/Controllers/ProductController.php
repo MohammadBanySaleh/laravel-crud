@@ -16,8 +16,7 @@ class ProductController extends Controller
     {
         $data = Product::all(); // Replace with your model name and any query logic
 
-        return view('index', compact('products'))
->>>>>>> f65e5be4320e94461070a9dd35936c59120690c3
+        return view('index', compact('products'));
     }
 
     /**
